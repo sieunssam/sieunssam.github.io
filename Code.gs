@@ -1,4 +1,4 @@
-const SPREADSHEET_ID = "REPLACE_WITH_SPREADSHEET_ID";
+const SPREADSHEET_ID = "1ajvUzKwV8Okxs8AjvkjiptZzU5L7-eGAVSot24YyCjY";
 const SHEET_NAME = "leads";
 const ALLOWED_DEVELOPER = "박시은";
 const MIN_SUBMIT_DELAY_MS = 1500;
@@ -9,16 +9,18 @@ function doPost(e) {
     validatePayload_(payload);
 
     const sheet = getSheet_();
+    ensureHeaderRow_(sheet);
+
     const row = buildRow_(payload);
     sheet.appendRow(row);
 
-    return jsonResponse_({
+    return successResponse_(payload, {
       ok: true,
       message: "saved",
       row: sheet.getLastRow(),
     });
   } catch (error) {
-    return jsonResponse_({
+    return errorResponse_(e, {
       ok: false,
       message: error.message || "unexpected error",
     });
@@ -65,6 +67,7 @@ function parseRequestBody_(e) {
     memo: stringValue_(data.memo),
     website: stringValue_(data.website),
     form_started_at: stringValue_(data.form_started_at),
+    response_mode: stringValue_(data.response_mode),
   };
 }
 
@@ -104,11 +107,36 @@ function validatePayload_(payload) {
 
 function getSheet_() {
   const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
-  const sheet = spreadsheet.getSheetByName(SHEET_NAME);
+  let sheet = spreadsheet.getSheetByName(SHEET_NAME);
+
   if (!sheet) {
-    throw new Error(`sheet not found: ${SHEET_NAME}`);
+    sheet = spreadsheet.insertSheet(SHEET_NAME);
   }
+
   return sheet;
+}
+
+function ensureHeaderRow_(sheet) {
+  if (sheet.getLastRow() > 0) {
+    return;
+  }
+
+  sheet.appendRow([
+    "created_at",
+    "name",
+    "phone",
+    "developer",
+    "consult_type",
+    "interest_type",
+    "visit_request",
+    "visit_datetime",
+    "page_url",
+    "device",
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "memo",
+  ]);
 }
 
 function buildRow_(payload) {
@@ -142,4 +170,41 @@ function jsonResponse_(payload) {
   return ContentService
     .createTextOutput(JSON.stringify(payload))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function successResponse_(payload, body) {
+  if (payload && payload.response_mode === "iframe") {
+    return iframeResponse_(body);
+  }
+
+  return jsonResponse_(body);
+}
+
+function errorResponse_(e, body) {
+  const responseMode =
+    e && e.parameter && e.parameter.response_mode
+      ? stringValue_(e.parameter.response_mode)
+      : "";
+
+  if (responseMode === "iframe") {
+    return iframeResponse_(body);
+  }
+
+  return jsonResponse_(body);
+}
+
+function iframeResponse_(payload) {
+  const json = JSON.stringify(payload)
+    .replace(/\\/g, "\\\\")
+    .replace(/'/g, "\\'");
+
+  const html = "<!doctype html><html><body><script>" +
+    "(function(){" +
+    "var message=" + json + ";" +
+    "if(window.parent){window.parent.postMessage({source:'medispark-lead-form',payload:message},'*');}" +
+    "document.body.innerText=message.message||'';" +
+    "})();" +
+    "</script></body></html>";
+
+  return HtmlService.createHtmlOutput(html);
 }
