@@ -1,0 +1,17 @@
+{
+  "name": "테스트API",
+  "phone": "010-9999-0000",
+  "developer": "박시은",
+  "consult_type": "상담하기",
+  "interest_type": "84A",
+  "visit_request": "N",
+  "visit_datetime": "",
+  "page_url": "https://example.com/braincity",
+  "device": "desktop",
+  "utm_source": "manual",
+  "utm_medium": "qa",
+  "utm_campaign": "braincity_manual_test",
+  "memo": "manual api test",
+  "website": "",
+  "form_started_at": "1893456000000"
+}

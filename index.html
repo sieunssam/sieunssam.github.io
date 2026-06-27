@@ -1,0 +1,1739 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>브레인시티 메디스파크 로제비앙 모아엘가</title>
+    <meta
+      name="description"
+      content="아주대병원, 초중학교, 상업시설, 공원을 도보로 누리는 브레인시티 메디스파크 로제비앙 모아엘가 분양 상담 페이지"
+    />
+    <style>
+      :root {
+        --bg: #f6f5f0;
+        --paper: #fffdf8;
+        --ink: #18343a;
+        --muted: #60767a;
+        --line: #d8dfd8;
+        --teal: #0f8f97;
+        --teal-deep: #09545c;
+        --sand: #c59b68;
+        --gold: #ffb342;
+        --navy: #204d81;
+        --forest: #2a6159;
+        --shadow: 0 20px 70px rgba(18, 52, 58, 0.14);
+        --radius-xl: 28px;
+        --radius-lg: 20px;
+        --radius-md: 14px;
+        --max: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Pretendard", "Noto Sans KR", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(15, 143, 151, 0.08), transparent 25%),
+          linear-gradient(180deg, #faf9f5 0%, #f3f6f5 100%);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(250, 249, 245, 0.82);
+        border-bottom: 1px solid rgba(24, 52, 58, 0.08);
+      }
+
+      .topbar-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .brand-badge {
+        display: inline-flex;
+        width: fit-content;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(197, 155, 104, 0.18);
+        color: #8a6334;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-title {
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+
+      .topbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 14px 20px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+        color: #fff;
+        box-shadow: 0 12px 24px rgba(9, 84, 92, 0.25);
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: var(--ink);
+        border: 1px solid rgba(24, 52, 58, 0.12);
+      }
+
+      .btn-accent {
+        background: linear-gradient(135deg, #ffb342 0%, #f38e22 100%);
+        color: #fff;
+        box-shadow: 0 12px 24px rgba(243, 142, 34, 0.24);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(10, 27, 31, 0.74) 0%, rgba(10, 27, 31, 0.38) 40%, rgba(10, 27, 31, 0.12) 100%),
+          linear-gradient(180deg, rgba(6, 17, 19, 0.18), rgba(6, 17, 19, 0.4));
+        z-index: 1;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: center / cover no-repeat url("./hero_render/hero_render.jpg");
+        transform: scale(1.04);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 92px 20px 72px;
+        min-height: 88vh;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(360px, 420px);
+        gap: 32px;
+        align-items: end;
+      }
+
+      .hero-copy {
+        color: #fff;
+        max-width: 740px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.13);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .hero h1 {
+        margin: 18px 0 18px;
+        font-size: clamp(34px, 5.1vw, 61px);
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+      }
+
+      .hero h1 span {
+        color: #ffe3b1;
+      }
+
+      .hero p {
+        margin: 0;
+        max-width: 640px;
+        font-size: clamp(16px, 1.7vw, 21px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-points {
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero-points li {
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .hero-cta {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero-card {
+        background: rgba(255, 252, 246, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.38);
+        border-radius: var(--radius-xl);
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card h2 {
+        margin: 0 0 10px;
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-card p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+
+      .mini-form {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+      }
+
+      .mini-form input,
+      .mini-form select {
+        width: 100%;
+        border: 1px solid #dbe6e8;
+        background: #fff;
+        border-radius: 14px;
+        padding: 14px 15px;
+        color: var(--ink);
+      }
+
+      .mini-form small {
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .hero-call {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(15, 143, 151, 0.1), rgba(32, 77, 129, 0.1));
+      }
+
+      .hero-call strong {
+        font-size: 20px;
+        letter-spacing: -0.03em;
+      }
+
+      section {
+        padding: 88px 20px;
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      .section-tag {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(15, 143, 151, 0.1);
+        color: var(--teal-deep);
+        font-weight: 800;
+        font-size: 13px;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        margin-bottom: 28px;
+      }
+
+      .section-title {
+        margin: 14px 0 0;
+        font-size: clamp(30px, 4vw, 54px);
+        line-height: 1.06;
+        letter-spacing: -0.05em;
+      }
+
+      .section-desc {
+        max-width: 460px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .stat {
+        padding: 26px;
+        border-radius: 24px;
+        background: var(--paper);
+        border: 1px solid rgba(24, 52, 58, 0.08);
+        box-shadow: 0 10px 30px rgba(24, 52, 58, 0.06);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .value-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 24px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--paper);
+        border: 1px solid rgba(24, 52, 58, 0.08);
+        border-radius: var(--radius-xl);
+        box-shadow: 0 12px 36px rgba(24, 52, 58, 0.08);
+        overflow: hidden;
+      }
+
+      .card-body {
+        padding: 24px;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .feature-item {
+        padding: 18px 18px 18px 20px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(15, 143, 151, 0.08), rgba(255, 179, 66, 0.08));
+        border: 1px solid rgba(15, 143, 151, 0.08);
+      }
+
+      .feature-item strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 18px;
+        letter-spacing: -0.03em;
+      }
+
+      .feature-item p {
+        margin: 0;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+
+      .image-cover {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .split-banner {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .banner-copy {
+        padding: 36px;
+        border-radius: var(--radius-xl);
+        background: linear-gradient(160deg, var(--teal-deep), #0f2f34);
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .banner-copy h3 {
+        margin: 14px 0 12px;
+        font-size: clamp(28px, 3.4vw, 46px);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+      }
+
+      .banner-copy p {
+        margin: 0 0 18px;
+        color: rgba(255, 255, 255, 0.82);
+        line-height: 1.7;
+      }
+
+      .bullet {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .bullet div {
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .image-panel {
+        background: var(--paper);
+        border: 1px solid rgba(24, 52, 58, 0.08);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .infra-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 22px;
+      }
+
+      .infra-card {
+        padding: 24px 20px;
+        border-radius: 22px;
+        background: #fff;
+        border: 1px solid rgba(24, 52, 58, 0.08);
+      }
+
+      .infra-card strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 22px;
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+      }
+
+      .infra-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .plan-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .plan-tab {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(24, 52, 58, 0.12);
+        background: #fff;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .plan-tab.is-active {
+        background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+        color: #fff;
+        border-color: transparent;
+      }
+
+      .plan-panel {
+        display: none;
+      }
+
+      .plan-panel.is-active {
+        display: grid;
+        grid-template-columns: minmax(260px, 310px) minmax(0, 1fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .plan-summary {
+        padding: 22px;
+        border-radius: 22px;
+        background: linear-gradient(180deg, #ffffff 0%, #f4f8f8 100%);
+        border: 1px solid rgba(24, 52, 58, 0.08);
+      }
+
+      .plan-summary .label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .plan-summary strong {
+        display: block;
+        margin-top: 12px;
+        font-size: 46px;
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+      }
+
+      .plan-summary .sub {
+        display: block;
+        margin-top: 6px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .plan-summary ul {
+        margin: 18px 0 0;
+        padding-left: 18px;
+        line-height: 1.65;
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .plan-figure {
+        border-radius: 22px;
+        overflow: hidden;
+        border: 1px solid rgba(24, 52, 58, 0.08);
+        background: #fff;
+      }
+
+      .plan-figure img {
+        width: 100%;
+        height: auto;
+        max-height: 680px;
+        object-fit: contain;
+      }
+
+      .cta-band {
+        padding: 38px;
+        border-radius: 28px;
+        background:
+          linear-gradient(135deg, rgba(15, 143, 151, 0.96), rgba(32, 77, 129, 0.96)),
+          #0f8f97;
+        color: #fff;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: center;
+        box-shadow: var(--shadow);
+      }
+
+      .cta-band h3 {
+        margin: 0 0 10px;
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+      }
+
+      .cta-band p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.88);
+        line-height: 1.7;
+      }
+
+      .footer {
+        padding: 42px 20px 96px;
+        color: var(--muted);
+      }
+
+      .footer .wrap {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mobile-bar {
+        display: none;
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 55;
+        padding: 10px;
+        border-radius: 20px;
+        background: rgba(255, 253, 248, 0.96);
+        box-shadow: 0 16px 40px rgba(18, 52, 58, 0.18);
+        border: 1px solid rgba(24, 52, 58, 0.08);
+        gap: 10px;
+      }
+
+      .mobile-bar .btn {
+        flex: 1;
+        padding: 14px 12px;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        background: rgba(7, 16, 18, 0.58);
+      }
+
+      .modal.is-open {
+        display: flex;
+      }
+
+      .modal-panel {
+        width: 100%;
+        max-width: 540px;
+        background: #fffdf8;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 26px 80px rgba(18, 52, 58, 0.28);
+      }
+
+      .modal-head {
+        padding: 26px 26px 18px;
+        background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+        color: #fff;
+      }
+
+      .modal-head strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -0.05em;
+      }
+
+      .modal-head p {
+        margin: 10px 0 0;
+        color: rgba(255, 255, 255, 0.88);
+        line-height: 1.6;
+      }
+
+      .modal-body {
+        padding: 24px 26px 26px;
+      }
+
+      .guide-box {
+        padding: 16px;
+        border-radius: 18px;
+        background: #f3f8f8;
+        border: 1px solid #dbe7e8;
+        margin-bottom: 16px;
+      }
+
+      .guide-box p {
+        margin: 4px 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .form-grid.two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid #d9e3e5;
+        padding: 14px 15px;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .form-actions {
+        margin-top: 18px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .hp-field {
+        position: absolute !important;
+        left: -9999px !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      .status {
+        display: none;
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .status.is-success {
+        display: block;
+        background: #eff8f2;
+        color: #137545;
+        border: 1px solid #c6e4cf;
+      }
+
+      .status.is-error {
+        display: block;
+        background: #fff3f3;
+        color: #bc3f3f;
+        border: 1px solid #efc8c8;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        border: 0;
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .relative {
+        position: relative;
+      }
+
+      @media (max-width: 1040px) {
+        .hero-inner,
+        .value-layout,
+        .split-banner,
+        .plan-panel.is-active,
+        .stats-grid,
+        .infra-grid,
+        .cta-band {
+          grid-template-columns: 1fr;
+        }
+
+        .plan-figure img {
+          max-height: none;
+        }
+
+        .hero-inner {
+          min-height: auto;
+          padding-top: 80px;
+        }
+      }
+
+      @media (max-width: 1366px) and (min-width: 1041px) {
+        #plans {
+          padding-top: 68px;
+          padding-bottom: 68px;
+        }
+
+        #plans .section-head {
+          margin-bottom: 20px;
+        }
+
+        #plans .section-title {
+          font-size: clamp(28px, 3.2vw, 44px);
+        }
+
+        #plans .section-desc {
+          font-size: 15px;
+          line-height: 1.6;
+        }
+
+        .plan-panel.is-active {
+          grid-template-columns: minmax(240px, 290px) minmax(0, 1fr);
+          gap: 16px;
+        }
+
+        .plan-summary {
+          padding: 20px;
+        }
+
+        .plan-summary strong {
+          font-size: 40px;
+        }
+
+        .plan-summary .sub {
+          font-size: 15px;
+        }
+
+        .plan-summary ul {
+          margin-top: 14px;
+          font-size: 13px;
+          line-height: 1.55;
+        }
+
+        .plan-summary .btn {
+          padding: 12px 14px;
+          font-size: 14px;
+        }
+
+        .plan-figure img {
+          max-height: 560px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .topbar-actions {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        section {
+          padding: 68px 16px;
+        }
+
+        .hero-inner,
+        .topbar-inner {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .hero-card,
+        .banner-copy,
+        .cta-band,
+        .card-body,
+        .plan-summary,
+        .modal-head,
+        .modal-body {
+          padding: 20px;
+        }
+
+        .form-grid.two,
+        .form-actions {
+          grid-template-columns: 1fr;
+          flex-direction: column;
+        }
+
+        .mobile-bar {
+          display: flex;
+        }
+
+        .footer {
+          padding-bottom: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <span class="brand-badge">의료 프리미엄 단지</span>
+          <strong class="brand-title">브레인시티 메디스파크 로제비앙 모아엘가</strong>
+        </div>
+        <div class="topbar-actions">
+          <a href="#plans" class="btn btn-secondary">타입 보기</a>
+          <button class="btn btn-accent js-open-consult" data-consult-type="방문예약">방문예약</button>
+          <button class="btn btn-primary js-open-consult" data-consult-type="상담하기">상담하기</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow">브레인시티 메디컬 라이프의 중심</div>
+            <h1>
+              아주대병원과 공원,
+              <span>학교와 미래 교통가치</span>
+              를 한 번에 품은 자리
+            </h1>
+            <p>
+              브레인시티 메디스파크 로제비앙 모아엘가는 도보 생활권, 의료 특화 입지,
+              대단지 설계, 주력 84타입 상품성을 함께 갖춘 메디컬 프리미엄 주거 선택지입니다.
+            </p>
+            <ul class="hero-points">
+              <li>총 1,215세대 브랜드 대단지</li>
+              <li>초중학교 도보 1분</li>
+              <li>아주대병원 도보 3분</li>
+              <li>동부화고속도로 2026년 9월 개통 예정</li>
+            </ul>
+            <div class="hero-cta">
+              <button class="btn btn-primary js-open-consult" data-consult-type="상담하기">상담 연결받기</button>
+              <button class="btn btn-secondary js-open-consult" data-consult-type="관심고객등록">관심고객 등록</button>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <h2>이름과 연락처만 남기면 빠르게 연결됩니다</h2>
+            <p>
+              복잡한 절차 없이 간단히 상담 신청하실 수 있습니다. 남겨주신 정보는 요청하신 분양 상담 안내 외 다른
+              용도로 사용되지 않습니다.
+            </p>
+            <form id="hero-form" class="mini-form" novalidate>
+              <input type="hidden" name="developer" value="박시은" />
+              <input type="hidden" name="consult_type" value="상담하기" />
+              <input type="hidden" name="page_url" value="" />
+              <input type="hidden" name="device" value="" />
+              <input type="hidden" name="utm_source" value="" />
+              <input type="hidden" name="utm_medium" value="" />
+              <input type="hidden" name="utm_campaign" value="" />
+              <input type="hidden" name="form_started_at" value="" />
+              <div class="hp-field" aria-hidden="true">
+                <label for="hero-website">웹사이트</label>
+                <input id="hero-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <input type="text" name="name" placeholder="이름" required />
+              <input type="tel" name="phone" placeholder="연락처" required />
+              <select name="interest_type">
+                <option value="">관심 타입 선택</option>
+                <option value="59A">59A</option>
+                <option value="59B">59B</option>
+                <option value="84A">84A</option>
+                <option value="84B">84B</option>
+                <option value="101">101</option>
+              </select>
+              <button type="submit" class="btn btn-primary">상담 연결받기</button>
+              <small>상담 가능 시간에 맞춰 담당자가 순차적으로 연락드립니다.</small>
+              <div class="status" id="hero-status"></div>
+            </form>
+            <div class="hero-call">
+              <div>
+                <div style="font-size: 13px; color: var(--muted); font-weight: 800;">대표번호</div>
+                <strong>010-6689-2348</strong>
+              </div>
+              <button class="btn btn-accent js-open-consult" data-consult-type="전화상담">전화 상담 예약</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-tag">PROJECT SNAPSHOT</span>
+              <h2 class="section-title">숫자로 확인하는 메디스파크의 존재감</h2>
+            </div>
+            <p class="section-desc">
+              총 세대수, 주차대수, 동간거리, 주력 타입 구성 같은 핵심 수치를 먼저 확인하면
+              메디스파크의 규모감과 실거주 가치를 더 빠르게 판단할 수 있습니다.
+            </p>
+          </div>
+          <div class="stats-grid">
+            <article class="stat">
+              <strong>1,215</strong>
+              <span>총 세대수</span>
+            </article>
+            <article class="stat">
+              <strong>1,722</strong>
+              <span>총 주차대수</span>
+            </article>
+            <article class="stat">
+              <strong>129.1m</strong>
+              <span>최대 동간거리</span>
+            </article>
+            <article class="stat">
+              <strong>84A</strong>
+              <span>주력 선호 타입 563세대</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap value-layout">
+          <div class="stack">
+            <article class="card">
+              <img class="image-cover" src="./tmp_pdf/page-11.png" alt="메디스파크 메디컬 클러스터" />
+              <div class="card-body">
+                <span class="section-tag">MEDICAL PREMIUM</span>
+                <h2 class="section-title" style="font-size: clamp(28px, 3vw, 42px); margin-top: 12px;">
+                  의료와 연구, 주거가 결합되는 브레인시티 핵심 입지
+                </h2>
+                <p class="section-desc" style="max-width: none; margin-top: 12px;">
+                  500병상 규모 종합병원과 의료 R&amp;D센터 예정이라는 차별점은 일반적인 신도시 분양 메시지와
+                  결이 다릅니다. 단순한 주거가 아니라 도시 기능이 들어오는 자리라는 점을 강하게 인식시켜야 합니다.
+                </p>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-body">
+                <span class="section-tag">LIFE COPY</span>
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <strong>학교가 가까운 집</strong>
+                    <p>초중학교 도보 1분의 메시지는 자녀 교육을 중시하는 가족 고객의 체감가치를 즉시 높입니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>병원이 가까운 집</strong>
+                    <p>아주대병원 도보 3분의 입지는 의료 접근성과 메디컬 클러스터 프리미엄을 동시에 연결합니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>공원과 상업시설이 가까운 집</strong>
+                    <p>상업시설 도보 5분, 대규모 공원 도보 1분이라는 생활 메시지는 실거주 설득력을 높입니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="stack">
+            <article class="card">
+              <img class="image-cover" src="./tmp_pdf/page-10.png" alt="도보 생활권 인프라" />
+            </article>
+            <article class="card">
+              <div class="card-body">
+                <span class="section-tag">PREMIUM SUMMARY</span>
+                <h2 class="section-title" style="font-size: clamp(28px, 3vw, 42px); margin-top: 12px;">
+                  실거주 만족과 미래가치를 함께 보는 고객에게 맞는 선택
+                </h2>
+                <div class="feature-list" style="margin-top: 18px;">
+                  <div class="feature-item">
+                    <strong>메디컬 프리미엄</strong>
+                    <p>아주대병원 인접 입지와 메디컬 클러스터 계획이 결합된 희소성 있는 생활권입니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>가족 중심 생활권</strong>
+                    <p>학교, 공원, 상업시설을 도보로 누릴 수 있어 실거주 만족도를 높이는 구조입니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>주력 평면 경쟁력</strong>
+                    <p>84A·84B·101 중심의 실용적 평면 구성이 상담 전환에서 가장 강한 설득 포인트가 됩니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="split-banner">
+            <div class="banner-copy">
+              <span class="section-tag" style="background: rgba(255,255,255,0.14); color: #fff;">TRANSPORT VALUE</span>
+              <h3>광역도로망과 철도망 개발이 집중되는 미래가치 축</h3>
+              <p>
+                동부화고속도로 개통 예정, 고속도로와 국도 접근성, GTX-A·GTX-C·KTX·SRT 등의 광역 교통망 개발
+                기대를 함께 묶어 설명할 때 고객은 단순 입지가 아니라 성장 스토리로 이해합니다.
+              </p>
+              <div class="bullet">
+                <div>동부화고속도로 2026년 9월 개통 예정</div>
+                <div>고속도로와 국도 중심 접근성 확보</div>
+                <div>광역 철도망 수혜 기대감 강조</div>
+              </div>
+            </div>
+            <div class="image-panel">
+              <img class="image-cover" src="./tmp_pdf/page-08.png" alt="브레인시티 광역교통" />
+            </div>
+          </div>
+          <div class="infra-grid">
+            <article class="infra-card">
+              <strong>도보 1분<br />초중학교</strong>
+              <p>자녀 교육 동선을 획기적으로 줄여주는 생활 밀착형 메시지</p>
+            </article>
+            <article class="infra-card">
+              <strong>도보 3분<br />아주대병원</strong>
+              <p>메디컬 특화 입지를 가장 직관적으로 설명하는 핵심 포인트</p>
+            </article>
+            <article class="infra-card">
+              <strong>도보 5분<br />중심상업시설</strong>
+              <p>주거의 편리함과 일상 소비 동선을 묶는 상업 프리미엄</p>
+            </article>
+            <article class="infra-card">
+              <strong>도보 1분<br />대규모 공원</strong>
+              <p>주말 여유와 가족 라이프스타일을 동시에 설득하는 친환경 메시지</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-tag">SITE & COMMUNITY</span>
+              <h2 class="section-title">남향 위주 배치, 넓은 동간거리, 공원형 설계</h2>
+            </div>
+            <p class="section-desc">
+              대단지 랜딩페이지에서 단지배치도는 단순 참고 이미지가 아닙니다. 프라이버시, 개방감, 조경, 커뮤니티
+              규모를 한 번에 보여주는 핵심 설득 요소입니다.
+            </p>
+          </div>
+          <div class="value-layout">
+            <article class="card">
+              <img class="image-cover" src="./tmp_pdf/page-03.png" alt="단지배치도" />
+              <div class="card-body">
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <strong>전 세대 남향 위주 배치</strong>
+                    <p>채광과 통풍, 일조량에 대한 소비자의 기대를 가장 직접적으로 충족하는 설계 포인트입니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>최대 129.1m 동간거리</strong>
+                    <p>답답하지 않은 개방감과 프라이버시 간섭 최소화라는 실거주 만족 요소를 정량 수치로 보여줍니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>조경면적 6,500평 + 인접 근린공원 약 7,150평</strong>
+                    <p>도시형 아파트가 아니라 공원을 품은 아파트라는 인식 전환을 유도합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <img class="image-cover" src="./tmp_pdf/page-07.png" alt="상품 종합평가" />
+              <div class="card-body">
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <strong>평면 구성</strong>
+                    <p>조망, 통풍, 수납, 공간 활용도를 중심으로 고객이 체감할 장점을 먼저 요약해서 노출합니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>커뮤니티</strong>
+                    <p>410평 규모 커뮤니티와 교육 공간, 액티비티 공간은 가족형 수요에게 확실한 프리미엄이 됩니다.</p>
+                  </div>
+                  <div class="feature-item">
+                    <strong>브랜드 대단지 인식</strong>
+                    <p>규모감 있는 조감도와 정리된 설계 포인트를 결합하면 문의 전환 효율이 높아집니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-tag">PLAN SELECTOR</span>
+              <h2 class="section-title">고객이 가장 많이 물어보는 타입부터 보여줍니다</h2>
+            </div>
+            <p class="section-desc">
+              59타입부터 101타입까지 주요 평면을 빠르게 비교할 수 있도록 정리했습니다.
+              관심 타입을 먼저 확인한 뒤 상담으로 이어가시면 보다 정확한 안내를 받으실 수 있습니다.
+            </p>
+          </div>
+
+          <div class="plan-tabs" role="tablist" aria-label="타입 선택">
+            <button class="plan-tab is-active" data-plan="59A">59A</button>
+            <button class="plan-tab" data-plan="59B">59B</button>
+            <button class="plan-tab" data-plan="84A">84A</button>
+            <button class="plan-tab" data-plan="84B">84B</button>
+            <button class="plan-tab" data-plan="101">101</button>
+          </div>
+
+          <div class="plan-panel is-active" data-plan-panel="59A">
+            <div class="plan-summary">
+              <span class="label">TYPE 59A</span>
+              <strong>59A</strong>
+              <span class="sub">소형 선호 고객을 위한 실속형 타입</span>
+              <ul>
+                <li>부담을 낮춘 면적으로 첫 내 집 수요에 적합</li>
+                <li>브레인시티 생활권을 합리적으로 검토할 수 있는 선택지</li>
+                <li>상세 조건과 동호 안내는 상담 시 개별 제공</li>
+              </ul>
+              <div style="margin-top: 20px;">
+                <button class="btn btn-primary js-open-consult" data-consult-type="59A 상담">59A 상담하기</button>
+              </div>
+            </div>
+            <div class="plan-figure card">
+              <div class="card-body">
+                <h3 style="margin: 0 0 10px; font-size: 28px; letter-spacing: -0.04em;">59A 관심 고객을 위한 상담 우선 안내</h3>
+                <p class="section-desc" style="max-width: none;">
+                  소형 타입을 찾는 고객에게는 부담을 낮춘 진입 선택지로 안내하고, 상세 평면과 조건은 상담 접수 후
+                  담당자가 빠르게 개별 안내하는 흐름이 적합합니다.
+                </p>
+                <img class="image-cover" src="./tmp_pdf/page-02.png" alt="59A 참고 이미지" />
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-panel" data-plan-panel="59B">
+            <div class="plan-summary">
+              <span class="label">TYPE 59B</span>
+              <strong>59B</strong>
+              <span class="sub">소형 구성 비교를 원하는 고객용 타입</span>
+              <ul>
+                <li>59A와 비교 검토하기 좋은 소형 선택지</li>
+                <li>실거주와 투자 관점을 함께 보는 고객에게 적합</li>
+                <li>세부 조건과 동호 정보는 상담 시 개별 제공</li>
+              </ul>
+              <div style="margin-top: 20px;">
+                <button class="btn btn-primary js-open-consult" data-consult-type="59B 상담">59B 상담하기</button>
+              </div>
+            </div>
+            <div class="plan-figure card">
+              <div class="card-body">
+                <h3 style="margin: 0 0 10px; font-size: 28px; letter-spacing: -0.04em;">59B 비교 상담 고객을 위한 맞춤 안내</h3>
+                <p class="section-desc" style="max-width: none;">
+                  소형 타입 간 차이를 비교하려는 고객이 바로 문의로 이어질 수 있도록 구성했으며, 상세 자료와 조건은
+                  상담 접수 후 담당자가 빠르게 회신하는 구조가 효율적입니다.
+                </p>
+                <img class="image-cover" src="./tmp_pdf/page-03.png" alt="59B 참고 이미지" />
+              </div>
+            </div>
+          </div>
+
+          <div class="plan-panel" data-plan-panel="84A">
+            <div class="plan-summary">
+              <span class="label">TYPE 84A</span>
+              <strong>84A</strong>
+              <span class="sub">34.09평형 · 총 563세대</span>
+              <ul>
+                <li>주력 공급 타입으로 가장 높은 범용성</li>
+                <li>ㄷ자형 주방과 넓은 수납 구조</li>
+                <li>거실-주방 맞통풍, 알파룸 제공</li>
+                <li>드레스룸 및 팬트리 확보</li>
+              </ul>
+              <div style="margin-top: 20px;">
+                <button class="btn btn-primary js-open-consult" data-consult-type="84A 상담">84A 상담하기</button>
+              </div>
+            </div>
+            <div class="plan-figure">
+              <img src="./tmp_pdf/page-04.png" alt="84A 평면도" />
+            </div>
+          </div>
+
+          <div class="plan-panel" data-plan-panel="84B">
+            <div class="plan-summary">
+              <span class="label">TYPE 84B</span>
+              <strong>84B</strong>
+              <span class="sub">34.16평형 · 총 167세대</span>
+              <ul>
+                <li>ㄱ자형 주방 동선으로 효율적인 공간 활용</li>
+                <li>침실1 독립형 구조로 프라이빗 구성</li>
+                <li>거실과 침실 남향 위주 배치</li>
+                <li>드레스룸과 팬트리 확보</li>
+              </ul>
+              <div style="margin-top: 20px;">
+                <button class="btn btn-primary js-open-consult" data-consult-type="84B 상담">84B 상담하기</button>
+              </div>
+            </div>
+            <div class="plan-figure">
+              <img src="./tmp_pdf/page-05.png" alt="84B 평면도" />
+            </div>
+          </div>
+
+          <div class="plan-panel" data-plan-panel="101">
+            <div class="plan-summary">
+              <span class="label">TYPE 101</span>
+              <strong>101</strong>
+              <span class="sub">40.68평형 · 총 333세대</span>
+              <ul>
+                <li>대형 수요 대응형 평면</li>
+                <li>넓은 주방·식당과 알파룸 구성</li>
+                <li>팬트리 2개, 수납 중심 설계</li>
+                <li>넉넉한 공간 활용도를 원하는 고객에게 적합</li>
+              </ul>
+              <div style="margin-top: 20px;">
+                <button class="btn btn-primary js-open-consult" data-consult-type="101 상담">101 상담하기</button>
+              </div>
+            </div>
+            <div class="plan-figure">
+              <img src="./tmp_pdf/page-06.png" alt="101 평면도" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <div class="cta-band">
+            <div>
+              <h3>지금 남기시면 확인 후 빠르게 상담드립니다</h3>
+              <p>
+                이름과 연락처만 남겨주시면 관심 타입, 방문예약 가능 여부, 일정 안내까지 담당자가 순차적으로
+                도와드립니다. 복잡한 절차 없이 빠르게 상담받을 수 있도록 최소 정보만 받고 있습니다.
+              </p>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn btn-accent js-open-consult" data-consult-type="관심고객등록">관심고객 등록</button>
+              <button class="btn btn-secondary js-open-consult" data-consult-type="전화상담">전화 상담 예약</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <strong style="font-size: 18px; color: var(--ink);">브레인시티 메디스파크 로제비앙 모아엘가</strong>
+        <div>대표번호 010-6689-2348</div>
+        <div>분양 상담 접수 및 방문예약 문의 페이지</div>
+        <div>
+          본 페이지의 교통 및 개발 관련 내용은 제공 자료 기준이며, 예정·계획·추진 사항은 향후 변경될 수 있습니다.
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-bar">
+      <button class="btn btn-secondary js-open-consult" data-consult-type="관심고객등록">관심고객 등록</button>
+      <button class="btn btn-primary js-open-consult" data-consult-type="상담하기">상담하기</button>
+    </div>
+
+    <iframe name="lead-submit-frame" id="lead-submit-frame" style="display: none;"></iframe>
+
+    <div class="modal" id="consult-modal" aria-hidden="true">
+      <div class="modal-panel relative">
+        <button class="close-btn" id="close-modal" aria-label="닫기">×</button>
+        <div class="modal-head">
+          <strong>상담 연결 전 간단히 정보만 남겨주세요</strong>
+          <p>복잡한 입력 없이 이름과 연락처만 남겨주시면 확인 후 빠르게 연락드립니다.</p>
+        </div>
+        <div class="modal-body">
+          <div class="guide-box">
+            <p>관심 고객 확인 후 빠르게 연락드리기 위해 최소 정보만 받고 있습니다.</p>
+            <p>남겨주신 정보는 요청하신 분양 상담 안내 외 다른 용도로 사용되지 않습니다.</p>
+            <p>원하실 때만 상담 연결해드리니 편하게 남겨주세요.</p>
+          </div>
+
+          <form id="consult-form" novalidate>
+            <input type="hidden" name="developer" value="박시은" />
+            <input type="hidden" name="page_url" value="" />
+            <input type="hidden" name="device" value="" />
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <input type="hidden" name="consult_type" value="상담하기" />
+            <input type="hidden" name="form_started_at" value="" />
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">웹사이트</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-grid two">
+              <div class="field">
+                <label for="modal-name">이름</label>
+                <input id="modal-name" name="name" type="text" placeholder="예: 홍길동" required />
+              </div>
+              <div class="field">
+                <label for="modal-phone">연락처</label>
+                <input id="modal-phone" name="phone" type="tel" placeholder="예: 010-1234-5678" required />
+              </div>
+            </div>
+
+            <div class="form-grid two">
+              <div class="field">
+                <label for="modal-interest">관심 타입</label>
+                <select id="modal-interest" name="interest_type">
+                  <option value="">선택 안 함</option>
+                  <option value="59A">59A</option>
+                  <option value="59B">59B</option>
+                  <option value="84A">84A</option>
+                  <option value="84B">84B</option>
+                  <option value="101">101</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="modal-visit-request">방문예약 여부</label>
+                <select id="modal-visit-request" name="visit_request">
+                  <option value="N">아니오</option>
+                  <option value="Y">예</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="modal-visit-datetime">방문 희망일시</label>
+                <input id="modal-visit-datetime" name="visit_datetime" type="text" placeholder="예: 7/2 오후 3시" />
+              </div>
+              <div class="field">
+                <label for="modal-memo">메모</label>
+                <textarea id="modal-memo" name="memo" rows="4" placeholder="궁금한 점이 있으면 남겨주세요."></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="submit-consult">상담 연결받기</button>
+              <button type="button" class="btn btn-secondary" id="submit-and-call">저장 후 전화걸기</button>
+            </div>
+            <div class="status" id="modal-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./landing.config.js"></script>
+    <script>
+      const LANDING_CONFIG = window.LANDING_CONFIG || {};
+      const APP_SCRIPT_URL =
+        LANDING_CONFIG.appScriptUrl || "https://script.google.com/macros/s/REPLACE_WITH_DEPLOYMENT_ID/exec";
+      const PHONE_NUMBER = LANDING_CONFIG.phoneNumber || "010-6689-2348";
+      const DEVELOPER = LANDING_CONFIG.developer || "박시은";
+      const MIN_SUBMIT_DELAY_MS = 1500;
+
+      function queryParam(name) {
+        return new URLSearchParams(window.location.search).get(name) || "";
+      }
+
+      function deviceType() {
+        return window.innerWidth <= 768 ? "mobile" : "desktop";
+      }
+
+      function digitsOnly(value) {
+        return String(value || "").replace(/\D/g, "");
+      }
+
+      function showStatus(element, message, type) {
+        element.textContent = message;
+        element.className = `status ${type === "success" ? "is-success" : "is-error"}`;
+      }
+
+      function clearStatus(element) {
+        element.textContent = "";
+        element.className = "status";
+      }
+
+      function setHiddenFields(form) {
+        form.querySelector('[name="page_url"]').value = window.location.href;
+        form.querySelector('[name="device"]').value = deviceType();
+        form.querySelector('[name="utm_source"]').value = queryParam("utm_source");
+        form.querySelector('[name="utm_medium"]').value = queryParam("utm_medium");
+        form.querySelector('[name="utm_campaign"]').value = queryParam("utm_campaign");
+        if (form.querySelector('[name="form_started_at"]') && !form.querySelector('[name="form_started_at"]').value) {
+          form.querySelector('[name="form_started_at"]').value = String(Date.now());
+        }
+      }
+
+      function buildPayload(form) {
+        const data = new FormData(form);
+        return {
+          name: String(data.get("name") || "").trim(),
+          phone: String(data.get("phone") || "").trim(),
+          developer: String(data.get("developer") || "").trim(),
+          consult_type: String(data.get("consult_type") || "").trim(),
+          interest_type: String(data.get("interest_type") || "").trim(),
+          visit_request: String(data.get("visit_request") || "N").trim(),
+          visit_datetime: String(data.get("visit_datetime") || "").trim(),
+          page_url: String(data.get("page_url") || window.location.href).trim(),
+          device: String(data.get("device") || deviceType()).trim(),
+          utm_source: String(data.get("utm_source") || "").trim(),
+          utm_medium: String(data.get("utm_medium") || "").trim(),
+          utm_campaign: String(data.get("utm_campaign") || "").trim(),
+          memo: String(data.get("memo") || "").trim(),
+          website: String(data.get("website") || "").trim(),
+          form_started_at: String(data.get("form_started_at") || "").trim(),
+        };
+      }
+
+      function validatePayload(payload) {
+        if (!payload.name) {
+          return "이름을 입력해주세요.";
+        }
+        if (digitsOnly(payload.phone).length < 9) {
+          return "연락처를 정확히 입력해주세요.";
+        }
+        if (payload.developer !== DEVELOPER) {
+          return "개발자 정보가 올바르지 않습니다.";
+        }
+        if (payload.website) {
+          return "정상적인 요청이 아닙니다.";
+        }
+        if (!payload.form_started_at || Number.isNaN(Number(payload.form_started_at))) {
+          return "폼 상태가 올바르지 않습니다.";
+        }
+        if (Date.now() - Number(payload.form_started_at) < MIN_SUBMIT_DELAY_MS) {
+          return "잠시 후 다시 시도해주세요.";
+        }
+        return "";
+      }
+
+      function shouldUseIframeSubmit(url) {
+        return String(url || "").includes("script.google.com/macros/s/");
+      }
+
+      async function sendLeadWithIframe(payload) {
+        return await new Promise((resolve, reject) => {
+          const iframe = document.getElementById("lead-submit-frame");
+          const form = document.createElement("form");
+          const cleanup = () => {
+            iframe.onload = null;
+            form.remove();
+          };
+
+          form.method = "POST";
+          form.action = APP_SCRIPT_URL;
+          form.target = "lead-submit-frame";
+          form.style.display = "none";
+
+          Object.entries(payload).forEach(([key, value]) => {
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = key;
+            input.value = value == null ? "" : String(value);
+            form.appendChild(input);
+          });
+
+          document.body.appendChild(form);
+
+          let settled = false;
+          const timer = window.setTimeout(() => {
+            if (settled) return;
+            settled = true;
+            cleanup();
+            resolve({ ok: true, message: "saved" });
+          }, 1800);
+
+          iframe.onload = () => {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timer);
+            cleanup();
+            resolve({ ok: true, message: "saved" });
+          };
+
+          try {
+            form.submit();
+          } catch (error) {
+            if (!settled) {
+              settled = true;
+              window.clearTimeout(timer);
+              cleanup();
+              reject(error);
+            }
+          }
+        });
+      }
+
+      async function sendLeadWithFetch(payload) {
+        if (!APP_SCRIPT_URL || APP_SCRIPT_URL.includes("REPLACE_WITH_DEPLOYMENT_ID")) {
+          throw new Error("Apps Script 배포 URL이 아직 설정되지 않았습니다.");
+        }
+
+        const response = await fetch(APP_SCRIPT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json();
+        if (!response.ok || !result.ok) {
+          throw new Error(result.message || "상담 접수에 실패했습니다.");
+        }
+        return result;
+      }
+
+      async function sendLead(payload) {
+        if (shouldUseIframeSubmit(APP_SCRIPT_URL)) {
+          return await sendLeadWithIframe(payload);
+        }
+        return await sendLeadWithFetch(payload);
+      }
+
+      async function handleFormSubmit(form, statusEl, submitButton, successMessage) {
+        clearStatus(statusEl);
+        setHiddenFields(form);
+        const payload = buildPayload(form);
+        const error = validatePayload(payload);
+        if (error) {
+          showStatus(statusEl, error, "error");
+          return false;
+        }
+
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "접수 중...";
+
+        try {
+          await sendLead(payload);
+          showStatus(statusEl, successMessage, "success");
+          form.reset();
+          form.querySelector('[name="developer"]').value = DEVELOPER;
+          if (form.querySelector('[name="consult_type"]')) {
+            form.querySelector('[name="consult_type"]').value = payload.consult_type || "상담하기";
+          }
+          if (form.querySelector('[name="form_started_at"]')) {
+            form.querySelector('[name="form_started_at"]').value = String(Date.now());
+          }
+          setHiddenFields(form);
+          return true;
+        } catch (errorObj) {
+          showStatus(statusEl, errorObj.message || "상담 접수 중 오류가 발생했습니다.", "error");
+          return false;
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }
+      }
+
+      const heroForm = document.getElementById("hero-form");
+      const heroStatus = document.getElementById("hero-status");
+      setHiddenFields(heroForm);
+      heroForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        await handleFormSubmit(
+          heroForm,
+          heroStatus,
+          heroForm.querySelector('button[type="submit"]'),
+          "상담 접수가 완료되었습니다. 담당자가 빠르게 연락드립니다."
+        );
+      });
+
+      const modal = document.getElementById("consult-modal");
+      const consultForm = document.getElementById("consult-form");
+      const modalStatus = document.getElementById("modal-status");
+      const submitConsultButton = document.getElementById("submit-consult");
+      const submitAndCallButton = document.getElementById("submit-and-call");
+      const consultTypeInput = consultForm.querySelector('[name="consult_type"]');
+      setHiddenFields(consultForm);
+
+      function openConsultModal(type) {
+        consultTypeInput.value = type || "상담하기";
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        clearStatus(modalStatus);
+        if (consultForm.querySelector('[name="form_started_at"]')) {
+          consultForm.querySelector('[name="form_started_at"]').value = String(Date.now());
+        }
+        setHiddenFields(consultForm);
+      }
+
+      function closeConsultModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      document.querySelectorAll(".js-open-consult").forEach((button) => {
+        button.addEventListener("click", () => {
+          openConsultModal(button.dataset.consultType || "상담하기");
+        });
+      });
+
+      document.getElementById("close-modal").addEventListener("click", closeConsultModal);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeConsultModal();
+        }
+      });
+
+      consultForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const ok = await handleFormSubmit(
+          consultForm,
+          modalStatus,
+          submitConsultButton,
+          "상담 접수가 완료되었습니다. 담당자가 빠르게 연락드립니다."
+        );
+        if (ok) {
+          setTimeout(closeConsultModal, 900);
+        }
+      });
+
+      submitAndCallButton.addEventListener("click", async () => {
+        const ok = await handleFormSubmit(
+          consultForm,
+          modalStatus,
+          submitAndCallButton,
+          "상담 정보 저장 후 전화 연결을 진행합니다."
+        );
+        if (ok) {
+          window.location.href = `tel:${PHONE_NUMBER}`;
+        }
+      });
+
+      const tabs = document.querySelectorAll(".plan-tab");
+      const panels = document.querySelectorAll(".plan-panel");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.plan;
+          tabs.forEach((btn) => btn.classList.toggle("is-active", btn === tab));
+          panels.forEach((panel) => {
+            panel.classList.toggle("is-active", panel.dataset.planPanel === target);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+created_at,name,phone,developer,consult_type,interest_type,visit_request,visit_datetime,page_url,device,utm_source,utm_medium,utm_campaign,memo
+2026-06-27T15:40:00+09:00,홍길동,01012345678,박시은,상담하기,84A,N,,https://example.com/braincity,mobile,naver,cpc,braincity_launch,
