@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f8f97"/>
+  <rect x="78" y="78" width="356" height="356" rx="92" fill="none" stroke="#f6e2bf" stroke-width="12"/>
+  <text x="116" y="292" font-family="Malgun Gothic, Arial, sans-serif" font-size="220" font-weight="700" fill="#fffaf1">M</text>
+  <rect x="128" y="332" width="260" height="60" rx="24" fill="#ffb342"/>
+  <text x="171" y="372" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#11343a">PARK</text>
+</svg>
