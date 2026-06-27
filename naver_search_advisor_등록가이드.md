@@ -9,7 +9,7 @@
 ## 등록할 사이트 URL
 
 ```text
-https://sieunssam.github.io/medispark-landing/
+https://sieunssam.github.io/
 ```
 
 ## 네이버 서치어드바이저에서 해야 할 것
@@ -51,13 +51,13 @@ naverabcd1234efgh.html
 네이버 서치어드바이저의 사이트맵 제출 메뉴에서 아래 주소를 입력하면 됩니다.
 
 ```text
-https://sieunssam.github.io/medispark-landing/sitemap.xml
+https://sieunssam.github.io/sitemap.xml
 ```
 
 ## robots.txt 확인 주소
 
 ```text
-https://sieunssam.github.io/medispark-landing/robots.txt
+https://sieunssam.github.io/robots.txt
 ```
 
 ## 점검 순서
